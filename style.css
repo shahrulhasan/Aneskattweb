@@ -1,0 +1,86 @@
+/* Common styles for both orientations */
+body {
+  position: relative;
+  /* Set body to relative positioning */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS';
+  /* Fun and cartoonish font */
+  overflow: hidden;
+  /* Disable scrolling */
+}
+
+.button {
+  text-decoration: none;
+  position: absolute;
+  /* Set button to absolute positioning */
+  bottom: 50px;
+  /* Adjust this value to move the button higher or lower */
+  padding: 10px 20px;
+  background-color: #FFC0CB;
+  /* Light pink background color */
+  color: white;
+  /* White text color */
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  /* Bold text */
+  text-transform: uppercase;
+  /* Uppercase text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+  /* Fallback to cursive or sans-serif font */
+  /* Smooth transitions for background color and scale */
+}
+
+.button:hover {
+  background-color: #FFB6C1;
+  /* Darker pink on hover */
+  transform: scale(1.05);
+  /* Slightly scale up on hover */
+}
+
+
+
+/* Styles for desktop (16:9) */
+@media screen and (min-aspect-ratio: 16/9) {
+  body {
+    background-image: url(desktop.jpg);
+    /* Replace 'desktop-background.jpg' with your desktop wallpaper */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Styles for phones (9:16) */
+@media screen and (max-aspect-ratio: 9/16) {
+  body {
+    background-image: url(phone.jpg);
+    /* Replace 'phone-background.jpg' with your phone wallpaper */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Keep background fixed */
+  }
+
+  .button {
+    left: 50%;
+    /* Position button at 50% from the left */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    transition: transform 0.3s ease;
+    /* Apply transition only to transform property */
+    bottom: 300px;
+    padding: 20px 15px;
+  }
+
+  .button:hover {
+    transform: translate(-50%, -55%);
+    /* Adjust hover effect for phones */
+  }
+}
