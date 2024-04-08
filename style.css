@@ -36,7 +36,7 @@ body {
 @media screen and (min-width: 768px) {
   body {
     background-image: url(desktop.jpg);
-    background-size: cover; /* Ensure background covers the entire body */
+    background-size: cover;
     background-position: center;
   }
 }
@@ -45,7 +45,7 @@ body {
 @media screen and (max-width: 767px) {
   body {
     background-image: url(phone.jpg);
-    background-size: cover; /* Ensure background covers the entire body */
+    background-size: contain; /* Ensure background fits within body */
     background-position: center;
     background-attachment: fixed;
   }
@@ -55,7 +55,7 @@ body {
     transform: translateX(-50%);
     transition: transform 0.3s ease;
     bottom: 200px;
-    padding: 20px 15px;
+    padding: 20px 15px 0px 15px;
   }
 
   .button:hover {
