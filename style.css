@@ -55,7 +55,7 @@ body {
     transform: translateX(-50%);
     transition: transform 0.3s ease;
     bottom: 200px;
-    padding: 3% 5%;
+    padding: 20px 15px;
   }
 
   .button:hover {
