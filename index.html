@@ -38,21 +38,22 @@
         .button-old {
             display: inline-block;
             margin: 20px auto;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #8b4513;
             color: #fff;
             border: 2px solid #d4af37;
-            border-radius: 25px;
-            font-size: 16px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 2px 2px 5px #555;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
             font-family: 'Garamond', serif;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .button-old:hover {
             background-color: #a0522d;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .quill-icon {
             margin-top: 20px;
@@ -60,7 +61,7 @@
             vertical-align: middle;
         }
         .quill-icon img {
-            width: 50px;
+            width: 40px; /* Made the quill image smaller */
             height: auto;
         }
         @keyframes typewriter {
@@ -79,6 +80,12 @@
             max-width: 90%; /* Set a max-width for larger screens */
             margin: 0 auto;
         }
+        /* For better animation on mobile */
+        .typewriter span {
+            display: inline-block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
         @keyframes blink {
             from, to { border-color: transparent; }
             50% { border-color: black; }
@@ -87,7 +94,7 @@
 </head>
 <body>
 
-    <h1 class="typewriter">A Special Message (This is literally not a special message) for You bitch.</h1>
+    <h1 class="typewriter"><span>A Special Message (This is literally not a special message) for You bitch.</span></h1>
 
     <div class="message-box" contenteditable="true" placeholder="Type your message here...">
         <!-- Your message goes here -->
