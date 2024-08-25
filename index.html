@@ -1,16 +1,94 @@
-.
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anuska roy bhebsaite</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for Anushka</title>
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Garamond&family=Courier+New&display=swap">
+    
+    <style>
+        body {
+            background: url('path/to/your/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Garamond', serif;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .message-box {
+            background: url('path/to/your/parchment.jpg') no-repeat center;
+            background-size: cover;
+            width: 80%;
+            height: 300px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            border: 2px solid #d4af37;
+            box-shadow: 0px 0px 10px rgba(212, 175, 55, 0.7);
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            resize: none;
+            outline: none;
+            overflow-y: auto;
+        }
+        .message-box::placeholder {
+            color: #888;
+        }
+        .button-old {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #8b4513;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px #555;
+            font-family: 'Garamond', serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button-old:hover {
+            background-color: #a0522d;
+        }
+        .quill-icon {
+            margin-top: 20px;
+            display: inline-block;
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .typewriter {
+            display: inline-block;
+            font-size: 18px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #000;
+            animation: typewriter 2s steps(40) 1s 1 normal both,
+                       blink 500ms steps(40) infinite normal;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+    </style>
 </head>
-
 <body>
-  <a href="main-page.html" class="button">Cleck fur Pruf</a>
-</body>
 
+    <h1 class="typewriter">A Special Message for My Anushka...</h1>
+
+    <div class="message-box" contenteditable="true" placeholder="Type your message here...">
+        <!-- Your message goes here -->
+    </div>
+
+    <a class="button-old" href="old-version.html">Old Version</a>
+
+    <div class="quill-icon">
+        <!-- You can add a quill icon or image here for aesthetic -->
+        <img src="path/to/your/quill-icon.png" alt="Quill Icon">
+    </div>
+
+</body>
 </html>
