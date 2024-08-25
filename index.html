@@ -81,27 +81,6 @@
             height: auto;
         }
 
-        .typewriter {
-            display: inline-block;
-            font-size: 22px;
-            font-family: 'Courier Prime', Courier, monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #000;
-            animation: blink 500ms steps(40) infinite;
-        }
-
-        .typewriter span {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typewriter 4s steps(40) 0s 1 normal both;
-        }
-
-        .typewriter span:nth-child(2) {
-            animation: typewriter 4s steps(40) 4s 1 normal both; /* Delays second line */
-        }
-
         @keyframes typewriter {
             from { width: 0; }
             to { width: 100%; }
@@ -111,22 +90,57 @@
             from, to { border-color: transparent; }
             50% { border-color: black; }
         }
+
+        .typewriter {
+            display: inline-block;
+            font-size: 22px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #000;
+            animation: typewriter 5s steps(40) 0s 1 normal both,
+                       blink 500ms steps(40) infinite;
+            max-width: 90%;
+            margin: 0 auto;
+            font-family: 'Courier Prime', Courier, monospace;
+        }
+
+        .typewriter span {
+            display: inline-block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Add additional keyframes for animating lines separately */
+        .line1 {
+            animation: typewriter 4s steps(40) 0s 1 normal both;
+        }
+
+        .line2 {
+            animation: typewriter 4s steps(40) 4s 1 normal both;
+        }
+
+        .line3 {
+            animation: typewriter 4s steps(40) 8s 1 normal both;
+        }
     </style>
 </head>
 <body>
 
     <h1 class="typewriter">
-        <span>HELLO...YOU.</span>
-        <span>For My Naomi Scott... I mean, Anushka</span>
-        <span>Wait, but ur also my aneska tt and aneska appi,</span>
-        <span>amina appi and also amina anti-appi at the same time, and so much more eh fuck you</span>
-        <span>ok so thank you, idk for what but thank you.</span>
-        <span>idk what will I do with this but it feels like a good idea so am gonna do it anyway.</span>
-        <span>btw the old stuff ain't gone, go try clicking this button below, it will lead you to the previous versions of this site.</span>
+        <span class="line1">A Special Message (no this is not)</span><br>
+        <span class="line2">for you.</span><br>
+        <span class="line3">For My Naomi Scott... I mean, Anushka</span><br>
     </h1>
 
     <div class="message-box" contenteditable="true" placeholder="Type your message here...">
         <!-- Your message goes here -->
+        HELLO...YOU.<br>
+        For My Naomi Scott... I mean, Anushka <br>
+        Wait, but ur also my aneska tt and aneska appi, 
+        amina appi and also amina anti-appi at the same time, and so much
+        more eh fuck you <br> ok so thank you, idk for what but thank you. <br> idk what will I do with this but it feels like a good idea so am gonna do it anyway. <br>
+        btw the old stuff ain't gone, go try clicking this button below, it will lead you to the previous versions of this site.
     </div>
 
     <a class="button-old" href="old-version.html">
