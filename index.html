@@ -39,6 +39,18 @@
             outline: none;
             overflow-y: auto;
             overflow-x: hidden;
+            opacity: 0; /* Start hidden */
+            animation: fadeInMessage 5s ease-in-out 3s forwards; /* Add delay */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInMessage {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .message-box::placeholder {
@@ -79,11 +91,6 @@
         .quill-icon img {
             width: 30px;
             height: auto;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .title {
