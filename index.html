@@ -16,13 +16,20 @@
             color: #333;
             text-align: center;
             padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
         }
 
         .message-box {
             background: url('path/to/your/parchment.jpg') no-repeat center;
             background-size: cover;
             width: 80%;
-            height: 300px;
+            max-width: 800px;
+            min-height: 150px;
             margin: 0 auto 20px;
             padding: 20px;
             border: 2px solid #d4af37;
@@ -32,6 +39,7 @@
             resize: none;
             outline: none;
             overflow-y: auto;
+            flex-grow: 1;
         }
 
         .message-box::placeholder {
@@ -40,7 +48,6 @@
 
         .button-old {
             display: inline-block;
-            margin: 20px auto;
             padding: 12px 40px;
             background-color: #8b4513;
             color: #fff;
@@ -54,6 +61,7 @@
             text-decoration: none;
             position: relative;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .button-old:hover {
@@ -64,12 +72,13 @@
         .quill-icon {
             display: inline-block;
             position: absolute;
-            right: -50px;
-            top: 5px;
+            right: -45px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .quill-icon img {
-            width: 35px;
+            width: 30px;
             height: auto;
         }
 
@@ -110,8 +119,10 @@
     <div class="message-box" contenteditable="true" placeholder="Type your message here...">
         <!-- Your message goes here -->
         For My Naomi Scott... I mean, Anushka <br>
-        Wait, but ur also my aneska tt and aneska appi, amina appi and also amina anti-appi, and so much more eh fuck you <br> ok so thank you, idk for what but thank you. <br> idk what will do with this but it feels like a good idea so am gonna do it anyway. <br>
-        btw the old stuff ain't go, go try clicking this button below, it will lead you the previous versions of this
+        Wait, but ur also my aneska tt and aneska appi, 
+        amina appi and also amina anti-appi at the same time, and so much
+        more eh fuck you <br> ok so thank you, idk for what but thank you. <br> idk what will I do with this but it feels like a good idea so am gonna do it anyway. <br>
+        btw the old stuff ain't gone, go try clicking this button below, it will lead you the previous versions of this site.
     </div>
 
     <a class="button-old" href="old-version.html">
