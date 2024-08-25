@@ -41,20 +41,27 @@
             padding: 10px 20px;
             background-color: #8b4513;
             color: #fff;
-            border: none;
+            border: 2px solid #d4af37;
+            border-radius: 25px;
             font-size: 16px;
             cursor: pointer;
             box-shadow: 2px 2px 5px #555;
             font-family: 'Garamond', serif;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .button-old:hover {
             background-color: #a0522d;
+            transform: scale(1.05);
         }
         .quill-icon {
             margin-top: 20px;
             display: inline-block;
+            vertical-align: middle;
+        }
+        .quill-icon img {
+            width: 50px;
+            height: auto;
         }
         @keyframes typewriter {
             from { width: 0; }
@@ -66,8 +73,11 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 2px solid #000;
-            animation: typewriter 2s steps(40) 1s 1 normal both,
+            animation: typewriter 4s steps(40) 1s 1 normal both,
                        blink 500ms steps(40) infinite normal;
+            width: 100%; /* Ensure the text container fills its space */
+            max-width: 90%; /* Set a max-width for larger screens */
+            margin: 0 auto;
         }
         @keyframes blink {
             from, to { border-color: transparent; }
@@ -86,7 +96,6 @@
     <a class="button-old" href="old-version.html">Old Version</a>
 
     <div class="quill-icon">
-        <!-- You can add a quill icon or image here for aesthetic -->
         <img src="1724600128857.png" alt="Quill Icon">
     </div>
 
