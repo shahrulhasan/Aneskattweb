@@ -81,57 +81,23 @@
             height: auto;
         }
 
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: black; }
-        }
-
-        .typewriter {
-            display: inline-block;
+        .title {
             font-size: 22px;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid #000;
-            animation: typewriter 5s steps(40) 0s 1 normal both,
-                       blink 500ms steps(40) infinite;
-            max-width: 90%;
-            margin: 0 auto;
             font-family: 'Courier Prime', Courier, monospace;
-        }
-
-        .typewriter span {
-            display: inline-block;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* Add additional keyframes for animating lines separately */
-        .line1 {
-            animation: typewriter 4s steps(40) 0s 1 normal both;
-        }
-
-        .line2 {
-            animation: typewriter 4s steps(40) 4s 1 normal both;
-        }
-
-        .line3 {
-            animation: typewriter 4s steps(40) 8s 1 normal both;
+            animation: fadeIn 3s ease-in-out;
+            margin: 0 auto;
+            max-width: 90%;
         }
     </style>
 </head>
 <body>
 
-    <h1 class="typewriter">
-        <span class="line1">A Special Message 
-            <span class="line2">(this ain't a special msg but anyway)</span><br>
-        <span class="line3">for you.</span><br>
-    </h1>
+    <h1 class="title">A Special Message (no this is not) for you.</h1>
 
     <div class="message-box" contenteditable="true" placeholder="Type your message here...">
         <!-- Your message goes here -->
