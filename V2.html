@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for Anooska fuckin Roy</title>
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Courier+Prime&display=swap">
+    
+    <style>
+        body {
+            background: url('path/to/your/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .message-box {
+            background: url('path/to/your/parchment.jpg') no-repeat center;
+            background-size: cover;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            border: 2px solid #d4af37;
+            box-shadow: 0px 0px 10px rgba(212, 175, 55, 0.7);
+            font-size: 18px;
+            font-family: 'Courier Prime', Courier, monospace;
+            resize: none;
+            outline: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+            opacity: 0; /* Start hidden */
+            animation: fadeInMessage 2s ease-in-out 0.5s forwards; /* Fade in after title */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInMessage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .message-box::placeholder {
+            color: #888;
+        }
+
+        .button-old {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #8b4513;
+            color: #fff;
+            border: 2px solid #d4af37;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .button-old:hover {
+            background-color: #a0522d;
+            transform: scale(1.05);
+        }
+
+        .quill-icon {
+            display: inline-block;
+            position: absolute;
+            right: -45px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .quill-icon img {
+            width: 30px;
+            height: auto;
+        }
+
+        .title {
+            font-size: 22px;
+            font-family: 'Courier Prime', Courier, monospace;
+            animation: fadeIn 2.5s ease-in-out;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">A Special Message (no this is not) for you.</h1>
+    <br>
+
+    <div class="message-box" contenteditable="true" placeholder="Type your message here...">
+        <!-- Your message goes here -->
+        HELLO...YOU.<br>
+        For My Naomi Scott... I mean, Anushka <br>
+        Wait, but ur also my aneska tt and aneska appi, 
+        amina appi and also amina anti-appi at the same time, and so much
+        more eh fuck you <br> ok so thank you, idk for what but thank you. <br> idk what will I do with this but it feels like a good idea so am gonna do it anyway. <br>
+        btw the old stuff ain't gone, go try clicking this button below, it will lead you to the previous versions of this site.
+    </div>
+
+    <a class="button-old" href="old-version.html">
+        Old Version
+        <div class="quill-icon">
+            <img src="1724600128857.png" alt="Quill Icon">
+        </div>
+    </a>
+
+</body>
+</html>
