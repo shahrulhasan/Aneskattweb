@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Letter To You 💌</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&family=Pacifico&family=Quicksand:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #9b59b6;
+            --secondary-color: #8e44ad;
+            --accent-color: #e056fd;
+            --background-start: #2c3e50;
+            --background-end: #8e44ad;
+            --text-color: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-hover: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .letter-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .letter-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Regular paragraph style */
+        .letter-text {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Poem style */
+        .poem {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--card-hover);
+            border-radius: 15px;
+        }
+
+        /* Story section style */
+        .story {
+            font-family: 'Lora', serif;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--card-hover);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Quote style */
+        .quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--accent-color);
+        }
+
+        /* Image container */
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .letter-image {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image caption */
+        .image-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Emphasis text */
+        .emphasis {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* Memory box style */
+        .memory-box {
+            background: var(--card-hover);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section divider */
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Handwritten style text */
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+
+        /* Special moments section */
+        .special-moment {
+            background: linear-gradient(45deg, var(--card-bg), var(--card-hover));
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+
+            .letter-container {
+                padding: 1.5rem;
+            }
+
+            .letter-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letter-container">
+            <h1 class="letter-title">My Letter To You 💌</h1>
+            
+            <!-- Example usage of different styles -->
+            <p class="letter-text">
+                Your regular paragraphs go here...
+            </p>
+
+            <div class="poem">
+                Your poems go here...<br>
+                Each line with emotion...<br>
+                Creating beautiful memories...
+            </div>
+
+            <div class="image-container">
+                <img src="your-image.jpg" alt="Special moment" class="letter-image">
+                <p class="image-caption">A beautiful memory we shared...</p>
+            </div>
+
+            <div class="story">
+                Your stories go here... Tell them about the special moments.
+            </div>
+
+            <p class="quote">
+                "Your meaningful quotes go here..."
+            </p>
+
+            <div class="memory-box">
+                <p class="handwritten">Your handwritten-style memories go here...</p>
+            </div>
+
+            <div class="divider">✨ • ✨ • ✨</div>
+
+            <div class="special-moment">
+                Your special moments and important messages go here...
+            </div>
+        </div>
+    </div>
+</body>
+</html>
