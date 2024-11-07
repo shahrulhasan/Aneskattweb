@@ -9,31 +9,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&family=Pacifico&family=Quicksand:wght@400;700&display=swap');
         
         :root {
-            --primary-color: #ff69b4;
-            --secondary-color: #9f6ba0;
-            --accent-color: #4a90e2;
-            --background-start: #2c3e50;
-            --background-end: #3498db;
-            --text-color: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.1);
-            --card-hover: rgba(255, 255, 255, 0.2);
-        }
-
-        [data-theme="purple"] {
             --primary-color: #9b59b6;
             --secondary-color: #8e44ad;
             --accent-color: #e056fd;
             --background-start: #2c3e50;
             --background-end: #8e44ad;
+            --text-color: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-hover: rgba(255, 255, 255, 0.2);
         }
 
-        [data-theme="sunset"] {
-            --primary-color: #e74c3c;
-            --secondary-color: #c0392b;
-            --accent-color: #f39c12;
-            --background-start: #2c3e50;
-            --background-end: #e74c3c;
-        }
+
 
         * {
             margin: 0;
@@ -87,7 +73,7 @@
         }
 
         .header {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Poppins', cursive;
             font-size: clamp(2rem, 8vw, 4rem);
             margin: 1rem 0;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
@@ -377,11 +363,6 @@
     </style>
 </head>
 <body>
-    <div class="theme-switcher">
-        <button class="theme-btn" style="background: #ff69b4;" onclick="setTheme('default')"></button>
-        <button class="theme-btn" style="background: #9b59b6;" onclick="setTheme('purple')"></button>
-        <button class="theme-btn" style="background: #e74c3c;" onclick="setTheme('sunset')"></button>
-    </div>
 
     <div class="container">
         <h1 class="header animate__animated animate__bounceIn">Happy Birthday Anushka! ✨</h1>
