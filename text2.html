@@ -6,17 +6,17 @@
     <title>Happy Birthday Anushka! ✨</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap');
         
         :root {
-            --primary-color: #ff78a9;
-            --secondary-color: #ff9ebd;
-            --accent-color: #ffd6e0;
-            --background-start: #2b1b2c;
-            --background-end: #453545;
+            --primary-color: #7c5295;
+            --secondary-color: #9f6ba0;
+            --accent-color: #b191d4;
+            --background-start: #2c3e50;
+            --background-end: #6c5b7b;
             --text-color: #ffffff;
             --card-bg: rgba(255, 255, 255, 0.1);
-            --card-hover: rgba(255, 255, 255, 0.15);
+            --card-hover: rgba(255, 255, 255, 0.2);
         }
 
         * {
@@ -48,35 +48,36 @@
         }
 
         .header {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             font-size: clamp(2rem, 8vw, 4rem);
             margin: 1rem 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             animation: animate__bounceIn 1s;
-            color: var(--text-color);
-            letter-spacing: 1px;
         }
 
         .main-button {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             padding: clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
             border: none;
-            border-radius: 15px;
-            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            border-radius: 50px;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             color: white;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+            font-family: 'Lora', serif;
             margin: 1.5rem 0;
+            animation: animate__pulse infinite 2s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
         }
 
-        .main-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        .countdown {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .feature-grid {
@@ -89,17 +90,16 @@
         .feature-item {
             background: var(--card-bg);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .feature-item h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
         }
 
         .photo-gallery {
@@ -107,9 +107,10 @@
             gap: 1rem;
             padding: 1.5rem;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 20px;
             margin: 2rem 0;
         }
 
@@ -117,22 +118,16 @@
             min-width: 250px;
             height: 250px;
             background: var(--card-hover);
-            border-radius: 12px;
+            border-radius: 15px;
             scroll-snap-align: start;
             transition: transform 0.3s ease;
+            position: relative;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .countdown {
-            font-size: clamp(1.1rem, 4vw, 1.8rem);
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
+        .photo-frame:hover {
+            transform: scale(1.05);
         }
 
         .wishes-wall {
@@ -140,7 +135,7 @@
             overflow-y: auto;
             padding: 1.5rem;
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 20px;
             margin: 2rem 0;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -149,21 +144,175 @@
             background: var(--card-hover);
             padding: 1.5rem;
             margin: 1rem 0;
-            border-radius: 12px;
+            border-radius: 15px;
             transition: transform 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
+            cursor: pointer;
+        }
+
+        .wish:hover {
+            transform: translateX(10px);
+        }
+
+        .letter-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90%;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            color: #333;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
 
         .letter-content {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
-            font-size: 1.1rem;
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            text-align: left;
         }
 
-        /* Rest of the styles remain the same */
+        .letter-header {
+            text-align: right;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
 
+        .letter-footer {
+            text-align: right;
+            margin-top: 2rem;
+        }
+
+        .close-letter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+
+        .spotify-playlist {
+            margin: 2rem 0;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 20px;
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: var(--card-hover);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .playlist-item:hover {
+            transform: scale(1.02);
+        }
+
+        .playlist-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+
+        .memory-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .memory-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 1rem;
+            transform: rotate(-3deg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+            margin: 2rem auto;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .polaroid p {
+            color: #333;
+            font-family: 'Lora', serif;
+            text-align: center;
+        }
+
+        .floating-bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 8s infinite;
+            will-change: transform;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .bubble {
+                display: none;
+            }
+            
+            .feature-item {
+                padding: 1.5rem;
+            }
+            
+            .photo-frame {
+                min-width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -171,40 +320,122 @@
         <h1 class="header animate__animated animate__bounceIn">Happy Birthday Anushka! ✨</h1>
         
         <button class="main-button" id="letterBtn">
-            Your Special Birthday Letter 💝
+            Read Your Special Letter 💌
         </button>
 
-        <!-- Rest of the HTML structure remains the same -->
+        <div class="countdown" id="countdown">
+            Loading your special countdown... ⌛
+        </div>
 
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>Memory Lane</h3>
+                <p>A collection of our precious moments together</p>
+                <div class="memory-box" id="memoryBox"></div>
+            </div>
+            <div class="feature-item">
+                <h3>Birthday Playlist</h3>
+                <div class="spotify-playlist" id="playlist">
+                    <div class="playlist-item">
+                        <img src="/api/placeholder/50/50" alt="Song cover">
+                        <div>
+                            <h4>Your Special Song</h4>
+                            <p>Artist Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <h3>Birthday Wishes</h3>
+                <div class="polaroid">
+                    <img src="/api/placeholder/300/200" alt="Birthday memory">
+                    <p>Happy Birthday! 🎉</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo-gallery" id="photoGallery">
+            <!-- Photos will be added dynamically -->
+        </div>
+
+        <div class="wishes-wall">
+            <div class="wish animate__animated animate__fadeIn">
+                "May your day be filled with joy and laughter! 🎂"
+            </div>
+            <div class="wish animate__animated animate__fadeIn">
+                "Here's to another amazing year! 🎉"
+            </div>
+            <div class="wish animate__animated animate__fadeIn">
+                "Wishing you all the happiness in the world! 🌟"
+            </div>
+        </div>
+
+        <!-- Letter Modal -->
+        <div class="overlay" id="overlay"></div>
+        <div class="letter-container" id="letterContainer">
+            <button class="close-letter" id="closeLetter">×</button>
+            <div class="letter-content">
+                <div class="letter-header">
+                    November 3rd, 2024
+                </div>
+                <p>Dearest Anushka,</p>
+                <br>
+                <p>On this special day, I wanted to take a moment to tell you just how much you mean to me and how grateful I am to have you in my life.</p>
+                <br>
+                <p>Your kindness, strength, and beautiful spirit have touched so many lives, including mine. Your smile brightens even the darkest days, and your determination inspires everyone around you.</p>
+                <br>
+                <p>As you begin another year of your amazing journey, I hope it brings you all the joy, success, and happiness you deserve. May each day be filled with wonderful surprises and precious moments.</p>
+                <br>
+                <p>Thank you for being you – the incredible person you are, with all your dreams, quirks, and endless potential.</p>
+                <br>
+                <div class="letter-footer">
+                    <p>With love and warmest wishes,</p>
+                    <p>❤️</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="floating-bubbles" id="bubbles"></div>
     <canvas id="confetti-canvas"></canvas>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/confetti-js/0.0.18/confetti.browser.min.js"></script>
 <script>
-    // Remove theme switcher related code
-    
-    // Letter button interaction with refined animation
-    const letterBtn = document.getElementById('letterBtn');
-    let isLetterOpen = false;
+    // Create floating bubbles
+    function createBubbles() {
+        const bubblesContainer = document.getElementById('bubbles');
+        const bubbleCount = window.innerWidth > 768 ? 20 : 10;
 
-    letterBtn.addEventListener('click', function(e) {
-        if (!isLetterOpen) {
-            e.preventDefault();
-            this.innerHTML = `
-                <div class="letter-content animate__animated animate__fadeIn">
-                    Dear Anushka,<br>
-                    <small>(Tap to close)</small>
-                </div>
-            `;
-            isLetterOpen = true;
-        } else {
-            this.innerHTML = 'Your Special Birthday Letter 💝';
-            isLetterOpen = false;
+        for (let i = 0; i < bubbleCount; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.width = Math.random() * 30 + 20 + 'px';
+            bubble.style.height = bubble.style.width;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDelay = Math.random() * 5 + 's';
+            bubble.style.animationDuration = Math.random() * 5 + 8 + 's';
+            bubblesContainer.appendChild(bubble);
         }
-    });
+    }
 
-    // Rest of the JavaScript remains the same
-</script>
-</body>
-</html>
+    // Initialize bubbles only on desktop
+    if (window.innerWidth > 768) {
+        createBubbles();
+    }
+
+    // Dynamic photo gallery
+    function initializePhotoGallery() {
+        const gallery = document.getElementById('photoGallery');
+        const photoCount = 6;
+        
+        for (let i = 0; i < photoCount; i++) {
+            const frame = document.createElement('div');
+            frame.className = 'photo-frame animate__animated animate__fadeIn';
+            frame.style.animationDelay = `${i * 0.2}s`;
+            frame.innerHTML = `<img src="/api/placeholder/250/250" alt="Memory ${i + 1}">`;
+            gallery.appendChild(frame);
+        }
+    }
+
+    // Initialize photo gallery with animation
+    setTimeout(initialize
