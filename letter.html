@@ -169,12 +169,132 @@
                 font-size: 2.5rem;
             }
         }
+/* Enhanced image and video containers */
+        .media-container {
+            margin: 2rem 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .media-container:hover {
+            transform: scale(1.02);
+        }
+
+        .letter-image, .letter-video {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .letter-image:hover, .letter-video:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Video specific styles */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 2rem 0;
+            background: var(--card-bg);
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: none;
+        }
+
+        /* Caption styles for both images and videos */
+        .media-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .media-container:hover .media-caption {
+            opacity: 1;
+        }
+
+        /* Video thumbnail style */
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .video-thumbnail::before {
+            content: '▶️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail:hover::before {
+            opacity: 1;
+        }
+
+        /* Loading animation for videos */
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--card-bg);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Video controls customization */
+        video::-webkit-media-controls {
+            background-color: rgba(43, 61, 79, 0.7);
+            border-radius: 0 0 15px 15px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .video-wrapper {
+                margin: 1rem 0;
+            }
+
+            .video-thumbnail::before {
+                font-size: 3rem;
+            }
+        }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="letter-container">
-            <h1 class="letter-title">My Letter To You 💌</h1>
+            <h1 class="letter-title">Everything</h1>
             
             <!-- Example usage of different styles -->
             <p class="letter-text">
@@ -211,5 +331,57 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="letter-container">
+            <h1 class="letter-title">Everything</h1>
+            
+            <!-- Example of how to add a video -->
+            <div class="media-container">
+                <!-- For YouTube videos -->
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/VIDEO_ID"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="media-caption">Our favorite song...</p>
+            </div>
+
+            <!-- Example of how to add a local video -->
+            <div class="media-container">
+                <div class="video-wrapper">
+                    <video controls class="letter-video">
+                        <source src="your-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="media-caption">Remember this moment?</p>
+            </div>
+
+            <!-- Rest of your content... -->
+        </div>
+    </div>
+
+    <script>
+        // Add loading animation to videos
+        document.querySelectorAll('video').forEach(video => {
+            const loading = document.createElement('div');
+            loading.className = 'video-loading';
+            video.parentElement.appendChild(loading);
+
+            video.addEventListener('loadeddata', () => {
+                loading.style.display = 'none';
+            });
+        });
+
+        // Lazy loading for videos
+        document.querySelectorAll('video').forEach(video => {
+            video.setAttribute('loading', 'lazy');
+        });
+    </script>
+
+    
 </body>
 </html>
