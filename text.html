@@ -367,6 +367,28 @@
         }
 
         
+       /* Enhanced image and video containers */
+        .media-container {
+            margin: 2rem 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .media-container:hover {
+            transform: scale(1.02);
+        }
+
+        .letter-image, .letter-video {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .letter-image:hover, .letter-video:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
         /* Video specific styles */
         .video-wrapper {
             position: relative;
@@ -377,13 +399,40 @@
             margin: 2rem 0;
             background: var(--card-bg);
         }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: none;
+        }
+
+        /* Caption styles for both images and videos */
+        .media-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .media-container:hover .media-caption {
+            opacity: 1;
+        }
+
         /* Video thumbnail style */
         .video-thumbnail {
             position: relative;
             cursor: pointer;
             overflow: hidden;
             border-radius: 15px;
-        } 
+        }
+
         .video-thumbnail::before {
             content: '▶️';
             position: absolute;
@@ -436,7 +485,7 @@
             .video-thumbnail::before {
                 font-size: 3rem;
             }
-        } 
+        }
     </style>
 </head>
 <body>
@@ -464,12 +513,16 @@
         <div class="feature-grid">
             <div class="feature-item">
                 <h3>Cute cattos wishing u birdeyyy :3 </h3>
-                 <div class="video-wrapper">
-                 <video controls class="letter-video">
+                 <div class="media-container">
+                <div class="video-wrapper">
+                    <video controls class="letter-video">
                         <source src="VID-20241111-WA0005.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                      </div>
+                 </div>
+                
+                     
             </div>
             <div class="feature-item">
                 <h3>AND DO YOU REMEMBER THIS?</h3>
