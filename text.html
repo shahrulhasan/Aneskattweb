@@ -366,35 +366,29 @@
             }
         }
 
-         .video-container {
-            position: relative;
+        .video-container {
             width: 100%;
             max-width: 600px;
-            margin: 1rem auto;
+            margin: 20px auto;
             border-radius: 12px;
             overflow: hidden;
-            background: #000;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
-
-        .custom-video {
+        
+        @media screen and (max-width: 768px) {
+            .video-container {
+                padding: 0 10px;
+                margin: 10px auto;
+            }
+        }
+        
+        video {
             width: 100%;
             height: auto;
             display: block;
-            cursor: pointer;
+            object-fit: cover;
         }
-
-        /* Remove the custom play button styles since we'll use native controls */
-        video::-webkit-media-controls {
-            display: flex !important;
-            visibility: visible !important;
-        }
-
-        video::-webkit-media-controls-enclosure {
-            display: flex !important;
-            visibility: visible !important;
-        }
-
-        
 
 
     </style>
@@ -423,15 +417,9 @@
             <div class="feature-item">
     <h3>Cute cattos wishing u birdeyyy :3</h3>
     <div class="video-container">
-        <video class="custom-video" playsinline>
+      <video width="100%" controls playsinline webkit-playsinline>
             <source src="VID-20241111-WA0005.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-        <button class="play-button">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-                <path d="M8 5v14l11-7z" fill="currentColor"/>
-            </svg>
-        </button>
     </div>
 </div>
                  
@@ -439,7 +427,7 @@
                      
             </div>
             <div class="feature-item">
-                <h3>AND DO YOU REMEMBER THIS?</h3>
+                <h3>From the Everything Box</h3>
                 <a href="https://open.spotify.com/track/0bYDMpQ94LnF38FiOlc8K9?si=42ddf817dac84813"><div class="spotify-playlist" id="playlist">
                     <div class="playlist-item">
                         <img src="IMG_20241108_025131166~2.jpg" alt="Song cover">
@@ -658,18 +646,7 @@
         resizeTimeout = setTimeout(optimizeForMobile, 250);
     });
 
-      document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('.custom-video');
-            
-            videos.forEach(video => {
-                // Add error handling
-                video.addEventListener('error', function(e) {
-                    console.error('Error loading video:', e);
-                    this.closest('.video-container').innerHTML = 
-                        '<p style="color: white; padding: 20px; text-align: center;">Sorry, there was an error loading the video. Please check if the video file exists and is in the correct format.</p>';
-                });
-            });
-        });
+      
 </script>
 </body>
 </html>
