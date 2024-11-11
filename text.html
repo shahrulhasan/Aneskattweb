@@ -366,56 +366,33 @@
             }
         }
 
-        /* Add these styles to your existing CSS */
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 1rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-}
+         .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
 
-.custom-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    cursor: pointer;
-}
+        .custom-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
 
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
+        /* Remove the custom play button styles since we'll use native controls */
+        video::-webkit-media-controls {
+            display: flex !important;
+            visibility: visible !important;
+        }
 
-.video-container:hover .play-button:not(.hidden),
-.custom-video:paused + .play-button {
-    opacity: 1;
-}
-
-.play-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.play-button.hidden {
-    display: none;
-}
+        video::-webkit-media-controls-enclosure {
+            display: flex !important;
+            visibility: visible !important;
+        }
 
         
 
@@ -681,40 +658,18 @@
         resizeTimeout = setTimeout(optimizeForMobile, 250);
     });
 
-    // Add this JavaScript to your existing script section
-document.addEventListener('DOMContentLoaded', function() {
-    const videoContainers = document.querySelectorAll('.video-container');
-    
-    videoContainers.forEach(container => {
-        const video = container.querySelector('.custom-video');
-        const playButton = container.querySelector('.play-button');
-        
-        // Handle play/pause
-        function togglePlay() {
-            if (video.paused) {
-                video.play();
-                playButton.classList.add('hidden');
-            } else {
-                video.pause();
-                playButton.classList.remove('hidden');
-            }
-        }
-        
-        // Event listeners
-        video.addEventListener('click', togglePlay);
-        playButton.addEventListener('click', togglePlay);
-        
-        // Show play button when video ends
-        video.addEventListener('ended', () => {
-            playButton.classList.remove('hidden');
+      document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('.custom-video');
+            
+            videos.forEach(video => {
+                // Add error handling
+                video.addEventListener('error', function(e) {
+                    console.error('Error loading video:', e);
+                    this.closest('.video-container').innerHTML = 
+                        '<p style="color: white; padding: 20px; text-align: center;">Sorry, there was an error loading the video. Please check if the video file exists and is in the correct format.</p>';
+                });
+            });
         });
-        
-        // Show play button initially
-        video.addEventListener('loadedmetadata', () => {
-            playButton.classList.remove('hidden');
-        });
-    });
-});
 </script>
 </body>
 </html>
