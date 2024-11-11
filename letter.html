@@ -192,26 +192,26 @@
         }
 
         /* Video specific styles */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            margin: 2rem 0;
-            background: var(--card-bg);
-        }
+.video-wrapper {
+    position: relative;
+    height: auto;  /* Remove fixed aspect ratio */
+    overflow: hidden;
+    border-radius: 15px;
+    padding-bottom: 0;
+    margin: 2rem 0;
+    background: var(--card-bg);
+}
 
-        .video-wrapper iframe,
-        .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            border: none;
-        }
+.video-wrapper iframe,
+.video-wrapper video {
+    position: relative;  /* Changed from absolute to allow natural height */
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: none;
+    background: transparent;  /* Ensure no background color is added */
+}
+
 
         /* Caption styles for both images and videos */
         .media-caption {
@@ -272,11 +272,13 @@
             }
         }
 
-        /* Video controls customization */
-        video::-webkit-media-controls {
-            background-color: rgba(43, 61, 79, 0.7);
-            border-radius: 0 0 15px 15px;
-        }
+    /* Video controls customization */
+video::-webkit-media-controls {
+    background-color: rgba(43, 61, 79, 0.5);  /* Reduced opacity */
+    backdrop-filter: blur(5px);  /* Add blur effect for better visibility */
+    border-radius: 0 0 15px 15px;
+}
+
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
@@ -332,7 +334,7 @@ We don't even know each other, all I know about you is that "Since when and how 
 <br><br>
 So that means today is not just YOUR BIRTHDAY but also the 2nd anniversary of us knowing eachother, god damn I realised this so fucking late wow. 
 <br><br>
-<div classs="poem"> A Happy Birthday to YOU and a Happy 2nd anniversary to us.<br>(Hope that's a happy thing) </div>
+<div class="poem"> A Happy Birthday to YOU and a Happy 2nd anniversary to us.<br>(Hope that's a happy thing) </div>
 <br><br>
 Yk sometimes I be sitting around and come to a sudden realisation every once a while. It's like "damn, she's not here" "If she would have been here it would have been like this this........."<br>
 I have lost so much :_), so much of you and so much of me as well and ig there is no getting back which is fine but damn, I have lost so much.<br>
@@ -385,7 +387,7 @@ Literally My favourite notification<br>
 And things I would call you "Amina appi" "Aneska_tt".<br>
 Those were "THE" times for me.<br> Although things have changed a lot,<br>you were the only human in existence with whom I had the realest connection with,<br>your smile was my smile,<br>your laugh was my laugh,<br>you were the light I was the moon.<br>Good times bhai.<br>Good times. 
 <br><br>
-I think every teacher from the previous batch of brothers would agree me and u are the best duo, or maybe not who cares <br> (Csr does, he misses us) <div class="image-container"> <img src="Screenshot_20241111-225523.png" class=letter-image">
+I think every teacher from the previous batch of brothers would agree me and u are the best duo, or maybe not who cares <br> (Csr does, he misses us) <div class="image-container"> <img src="Screenshot_20241111-225523.png" class=letter-image"> </div>
     
 But for me, me and you were the best duo there,<br>girl I MISS 2023 BROTHERS,<br>loved sitting in the opposite row near you,<br>I loved going to brothers last year,<br>everyday I would do everything to go there no matter whatever the fuck happens,<br>I had that rage in me that time yk, you were the one who fired that rage inside me.<br>I'm telling you, when I say u were the light of my life, I fucking mean it.<br>Everything is tough in the dark, chota se chota kaam pahad todne type lagta, after that's done the exhaustion I feel is literally as if hum pahad hi Tod ke aye hain.<br>Yk that day, I came home at around 5:30 from bridgeford, it was a Tuesday,<br>and Istg if it would have been last year, chahe kitna energy hi bacha ho, I would have done everything to go to brothers just so I could be there with you.<br>Ab to wo motivation hi nhi Raha. Khair, last year was so fucking fun.<br>Ssm sir jaise bhi ho, wo acche the humlog ke liye 9th me, tumko  publically address bhi kiye the, which I think was the first one to do that, giving u the "underdog" tag. That group chat too, "STUDENTS-D1", it was so fun to beef around in that group with people. <br> Tumhare birthday hi ke din konsa to ladai hogya tha udhar pata nhi, you were worried or something 😭 and wanted me to stay away, <br> Archit didn't deserve all that but man I love his memes 
     <div class="media-container">
