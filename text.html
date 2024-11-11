@@ -365,6 +365,78 @@
                 transform: rotate(360deg);
             }
         }
+
+        
+        /* Video specific styles */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 2rem 0;
+            background: var(--card-bg);
+        }
+        /* Video thumbnail style */
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 15px;
+        } 
+        .video-thumbnail::before {
+            content: '▶️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail:hover::before {
+            opacity: 1;
+        }
+
+        /* Loading animation for videos */
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--card-bg);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Video controls customization */
+        video::-webkit-media-controls {
+            background-color: rgba(43, 61, 79, 0.7);
+            border-radius: 0 0 15px 15px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .video-wrapper {
+                margin: 1rem 0;
+            }
+
+            .video-thumbnail::before {
+                font-size: 3rem;
+            }
+        } 
     </style>
 </head>
 <body>
@@ -392,10 +464,12 @@
         <div class="feature-grid">
             <div class="feature-item">
                 <h3>Cute cattos wishing u birdeyyy :3 </h3>
+                 <div class="video-wrapper">
                  <video controls class="letter-video">
                         <source src="VID-20241111-WA0005.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                     </div>
             </div>
             <div class="feature-item">
                 <h3>AND DO YOU REMEMBER THIS?</h3>
