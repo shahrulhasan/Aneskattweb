@@ -397,7 +397,6 @@
             overflow: hidden;
             border-radius: 15px;
             margin: 2rem 0;
-            background: var(--card-bg);
         }
 
         .video-wrapper iframe,
@@ -428,9 +427,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 4rem;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-            z-index: 2;
+            opacity: 1;
+            z-index: 10;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -458,7 +456,7 @@
 
         /* Video controls customization */
         video::-webkit-media-controls {
-            background-color: rgba(43, 61, 79, 0.7);
+            background-color: rgba(43, 61, 79, 1);
             border-radius: 0 0 15px 15px;
         }
 
@@ -489,9 +487,7 @@
         <h1 class="header animate__animated animate__bounceIn">Happy Birthday Anushka! ✨</h1>
         <h5>Or Anushka_tt or Amina appi or whatever</h5>
         
-        <button class="main-button" id="letterBtn">
-          <a href="letter.html">  Everything<br>[Yes this is a Button] </a>
-        </button>
+      
 
         <div class="countdown" id="countdown">
             HAPPY FUCKING BIRTHDAY EYYYY. ITS 12AM OF 14TH OF NOVEMBER 1!!1!!
@@ -509,7 +505,7 @@
             <div class="feature-item">
                 <h3>Cute cattos wishing u birdeyyy :3 </h3>
                  <div class="media-container">
-                <div class="video-wraper">
+                <div class="video-wrapper">
                     <video controls class="letter-video">
                         <source src="VID-20241111-WA0005.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -555,6 +551,9 @@
                 Take care okay, continue reading ;)
              </div>
         </div>
+      <button class="main-button" id="letterBtn">
+          <a href="letter.html">  Everything [CLICK] </a>
+        </button>
     </div>
 
 
